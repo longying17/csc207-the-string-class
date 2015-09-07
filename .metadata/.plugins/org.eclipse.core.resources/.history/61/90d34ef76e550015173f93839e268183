@@ -1,0 +1,22 @@
+import java.util.Scanner
+
+public class StringExercises {
+
+	public static boolean forgivingPrompt(){
+		System.out.println("Do you like Grinnell?");
+		Scanner in = new Scanner(System.in);
+		String response = in.nextLine();
+		if(in.equalsIgnoreCase("Y" || "Yes" || "Yep")){
+			return true;
+		} else if(in.equalsIgnoreCase("N" || "No" || "Nope")){
+			return false;
+		} else{
+			forgivingPrompt();
+		}
+	}
+	public static void main(String[] args) {
+		forgivingPrompt();
+
+	}
+
+}

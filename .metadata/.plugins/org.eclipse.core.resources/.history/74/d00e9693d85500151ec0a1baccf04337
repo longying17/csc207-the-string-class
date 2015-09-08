@@ -1,0 +1,39 @@
+
+public class ParseName {
+
+	public static String parseName(String s){
+		char[] firstName = new char[s.length()];
+		char[] middleName = new char[s.length()];
+		char[] lastName = new char[s.length()];
+		
+		int i = 0;
+		while(s.charAt(i) != ','){
+			lastName[i] = s.charAt(i);
+			i++;
+		}
+		String lastname = new String(lastName);
+		i = lastname.length() + 2;
+		while(s.charAt(i) != ','){
+			int m = 0;
+			firstName[m] = s.charAt(i);
+			m++;
+			i++;
+		}
+		String firstname = new String(firstName);
+		i = lastname.length() + 1 + firstname.length() + 2;
+		while(s.charAt(i) != ','){
+			int m = 0;
+			middleName[m] = s.charAt(i);
+			m++;
+			i++;
+		}
+		String middlename = new String(middleName);
+		return (firstname + middlename + lastname);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(parseName("Long,Ying,CS"));
+
+	}
+
+}
